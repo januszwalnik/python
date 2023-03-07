@@ -20,7 +20,7 @@ async def handler(websocket):
     async for message in websocket:
         await broadcast_message(message, id(websocket))
     try:
-      await websocket.wait_closed()
+        await websocket.wait_closed()
     finally:
         CLIENTS.remove(websocket)
 
@@ -29,7 +29,7 @@ async def broadcast_message(message, client_id):
     temp_client = ""
     for client in CLIENTS:
         print(f'client: {id(client)}, msg: {USER_NAME[id(client)]}: {message}')
-        if client_id == (id(client)): 
+        if client_id == (id(client)):
             temp_client = client
     if temp_client != "": 
         CLIENTS.remove(temp_client)      
