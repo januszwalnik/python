@@ -1,17 +1,12 @@
 import asyncio
 import websockets
 
-SERVER="localhost"
+SERVER="127.0.0.1"
 PORT=8765
 
 
 CLIENTS = set()
 USER_NAME: dict = {}
-
-
-async def relay(queue, websocket) -> None:
-    message = await queue.set()
-    await websocket.send(message)
 
 
 async def handler(websocket):
