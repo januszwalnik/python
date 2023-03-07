@@ -35,7 +35,7 @@ async def broadcast_message(message, client_id):
 async def main():
     async with websockets.serve(handler, f"{SERVER}", PORT):
         print(f"Running server on {SERVER}:{PORT}")
-        print(f"Connect to server using this cmd: python3 -m websockets ws://{SERVER}:{PORT}")
+        print(f"Connect to server using this command: python3 -m websockets ws://{SERVER}:{PORT}")
         await asyncio.Future()
 
 if __name__ == "__main__":
