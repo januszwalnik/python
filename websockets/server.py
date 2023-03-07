@@ -22,8 +22,8 @@ async def handler(websocket):
 async def broadcast_message(message, client_id):
     await asyncio.sleep(1)
     temp_client = ""
+    print(f'client: {client_id}, msg: {USER_NAME[client_id]}: {message}')
     for client in CLIENTS:
-        print(f'client: {id(client)}, msg: {USER_NAME[id(client)]}: {message}')
         if client_id == (id(client)):
             temp_client = client
     if temp_client != "": 
